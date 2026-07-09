@@ -19,6 +19,12 @@ class Agent:
         tool_input = lines[1].split(":")[1].strip()
         if tool == "calculate":
             result = calculate(tool_input)
-            return result
+            answer = self.planner.respond(
+                query,
+                result
+            )
+            return answer
         else:
             return "No tool used."
+
+        
