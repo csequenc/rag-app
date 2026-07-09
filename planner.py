@@ -38,7 +38,7 @@ User: {query}
 
     def respond(self, query, observation):
 
-    prompt = f"""
+        prompt = f"""
 User asked:
 
 {query}
