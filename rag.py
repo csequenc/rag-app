@@ -7,6 +7,7 @@ from reranker import Reranker
 from generator import Generator
 from utils import load_documents
 
+
 # Configuration
 CHUNK_SIZE = 100
 OVERLAP = 20
