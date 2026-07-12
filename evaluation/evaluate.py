@@ -1,6 +1,7 @@
 import json
 
 from rag import initialize_rag, run_rag
+from judge import judge_generation
 
 
 def load_gold_dataset():
@@ -33,31 +34,44 @@ def evaluate_retrieval(result, record):
     result["missed_documents"] = list(expected - retrieved)
     result["unexpected_documents"] = list(retrieved - expected)
 
-    return result
-
-
-def judge_generation(result, record):
-    """
-    TODO (Week 7)
-    Call the judge LLM and return evaluation.
-    """
-    pass
-
 
 def save_results(results):
-    """
-    TODO (Week 7)
-    Save detailed evaluation results to results.json.
-    """
-    pass
+    try:
+        with open(
+            "evaluation/results.json",
+            "w",
+            encoding="utf-8"
+        ) as file:
+            json.dump(results, file, indent=4, ensure_ascii=False)
+
+        print("\nEvaluation results saved to evaluation/results.json")
+
+    except Exception as e:
+        print(f"Failed to save results: {e}")
 
 
 def print_summary(results):
-    """
-    TODO (Week 7)
-    Print overall evaluation metrics.
-    """
-    pass
+
+    total_questions = len(results)
+
+    retrieval_success = 0
+    average_judge_score = 0
+
+    for result in results:
+
+        if len(result["missed_documents"]) == 0:
+            retrieval_success += 1
+
+        average_judge_score += result["judge"]["overall_score"]
+
+    if total_questions > 0:
+        average_judge_score /= total_questions
+
+    print("\n========== Evaluation Summary ==========")
+    print(f"Total Questions      : {total_questions}")
+    print(f"Retrieval Success    : {retrieval_success}/{total_questions}")
+    print(f"Average Judge Score  : {average_judge_score:.2f}/10")
+    print("========================================")
 
 
 def evaluate():
@@ -80,7 +94,9 @@ def evaluate():
 
         evaluate_retrieval(result, record)
 
-        judge_generation(result, record)
+        judge_result = judge_generation(result, record)
+
+        result["judge"] = judge_result
 
         all_results.append(result)
 
@@ -95,4 +111,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
