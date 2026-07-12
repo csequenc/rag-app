@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Why is climate change getting worse in the 21st century?",
+    "expected_answer": "Climate change is worsening due to increased greenhouse gas emissions from industrialization, fossil fuel use, and deforestation.",
+    "expected_source_documents": [
+      "02_climate_change.txt"
+    ],
+    "notes": "Tests single-document retrieval and descriptive generation."
+  },
+  {
+    "question": "What is Generative AI?",
+    "expected_answer": "Generative AI is a branch of artificial intelligence that creates new content such as text, images, code, audio, and video from learned patterns in data.",
+    "expected_source_documents": [
+      "01_intro_to_ai.txt"
+    ],
+    "notes": "Tests retrieval of introductory AI concepts and descriptive generation."
+  }
+]
