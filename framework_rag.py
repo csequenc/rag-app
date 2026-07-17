@@ -34,7 +34,7 @@ chunks = load_documents(
 retriever = Retriever()
 retriever.build_index(chunks)
 
-reranker = Reranker()
+# reranker = Reranker()
 
 generator = Generator(
     api_key=API_KEY

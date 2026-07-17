@@ -70,10 +70,10 @@ def rag_search(question: str) -> str:
         top_k=5
     )
 
-    results = reranker.rerank(
-        question,
-        results
-    )
+    # results = reranker.rerank(
+    #     question,
+    #     results
+    # )
 
     context = "\n\n".join(
     chunk["text"]
