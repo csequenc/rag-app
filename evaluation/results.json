@@ -1,7 +1,7 @@
 [
     {
         "question": "Why is climate change getting worse in the 20th century?",
-        "answer": "Since the industrial revolution, humans have been changing the global climate by emitting huge amounts of greenhouse gases, and the Earth’s average temperature has increased by one degree during the 20th century.",
+        "answer": "I don't know based on the provided documents.",
         "retrieved_chunks": [
             {
                 "text": "ince the industrial revolution, humans have\nbeen changing the global climate by emitting huge amount",
@@ -43,17 +43,17 @@
         "missed_documents": [],
         "unexpected_documents": [],
         "judge": {
-            "correct": true,
-            "grounded": true,
+            "correct": false,
+            "grounded": false,
             "hallucination": false,
-            "completeness_score": 8,
-            "overall_score": 9,
-            "reason": "The generated answer accurately reflects the information provided in the retrieved context, specifically mentioning the industrial revolution and the increase in the Earth's average temperature during the 20th century."
+            "completeness_score": 0,
+            "overall_score": 0,
+            "reason": "The generated answer does not provide any relevant information to answer the question."
         }
     },
     {
         "question": "What is Generative AI?",
-        "answer": "Generative AI creates new data, unlike traditional AI systems that mainly analyze existing data.",
+        "answer": "Generative AI is one of the fastest-growing areas of artificial intelligence that creates new data, unlike traditional AI systems that mainly analyze existing data. It combines AI, language processing, and other technologies to understand, interpret, generate, and respond to human language, transforming creative industries by increasing productivity.",
         "retrieved_chunks": [
             {
                 "text": "rative AI\n\nGenerative AI is one of the fastest-growing areas of artificial intelligence. Unlike trad",
@@ -98,9 +98,9 @@
             "correct": true,
             "grounded": true,
             "hallucination": false,
-            "completeness_score": 6,
-            "overall_score": 8,
-            "reason": "The generated answer is correct and grounded in the context, but lacks detail and specificity compared to the expected answer."
+            "completeness_score": 8,
+            "overall_score": 9,
+            "reason": "The generated answer accurately captures the essence of Generative AI, although it does not explicitly mention the creation of content such as text, images, code, audio, and video."
         }
     }
 ]
